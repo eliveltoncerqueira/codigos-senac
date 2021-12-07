@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+ }
+ .bg-colorbrow{
+     background-color:brown;
+ }
+ #marca{
+     float: left;
+     margin: 20px;
+ }
+
+ #logo{
+     color: white;
+     margin: 0;
+ }
+ #menu{
+     display: flex;
+ }
+ #listamenu{
+     margin: 30px;
+ }
+ .itensmenu{
+     float: left;
+     margin: 0px 20px;
+     list-style:none;
+ }
+ .linksmenu{
+     color: white;
+     text-decoration: none;
+     font-size: 20px;
+ }
+ main{
+     display: flex;
+     margin-top: 50px;
+     justify-content: center;
+     
+ }
+ #noticiaprincipal{
+     width: 60%;
+ }
+ #imagemdoartigoprincipal{
+     width: 100%;
+ }
+ #rodape{
+     text-align: center;
+ }
+ #textorodape{
+     color: white;padding: 20px;
+ }

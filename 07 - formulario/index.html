@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu novo site</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header id="meumenu" class="cor-de-fundo">
+        <h1 id="minhalogo">Uma logomarca</h1>
+        <nav>
+            <ul>
+                <li class="itensmenu">Primeiro Item</li>
+                <li class="itensmenu">Segundo Item</li>
+                <li class="itensmenu">Terceiro Item</li>
+            </ul>
+        </nav>
+    </header>
+    <main id="meuconteudoprincipal">
+        <h1>Um Título</h1>
+        <form action="sucesso.html" method="POST">
+            <div class="campo">
+                <label for="nome">Nome</label><br>
+                <input class="dados" type="text" id="nome" name="nome" required><br>
+            </div>
+            <div class="campo">
+                <label for="sobrenome">Sobrenome</label><br>
+                <input class="dados" type="text" id="sobrenome" name="sobrenome" required><br>
+            </div>
+            <div class="campo">
+                <label for="idade">Qual sua idade?</label><br>
+                <input class="dados" type="number" name="idade" id="idade" required><br>
+            </div>
+            <div class="campo">
+                <label for="email">E-mail</label><br>
+                <input class="dados" type="email" name="email" id="email" required><br>
+            </div>
+            <div class="campo">
+                <label for="senha">Digite sua senha:</label><br>
+                <input class="dados" type="password" name="senha" id="senha" required><br>
+            </div>
+                <p>Que tipo de esportes você pratica?</p>
+                <input type="checkbox" id="futebol" name="esporte" value="futebol">
+                <label  for="futebol">Futebol</label>
+                <br>
+                <input type="checkbox" id="surf" name="esporte" value="surf">
+                <label for="surf">Surf</label>
+                <br>
+                <input type="checkbox" id="natacao" name="esporte" value="natacao">
+                <label for="natacao">Natação</label>
+            </div>
+            <div class="campo">
+                <p>Qual seu sexo?</p>
+                <input type="radio" name="sexo" id="masculino" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" name="sexo" id="feminino" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                <br>
+
+                <input type="radio" name="sexo" id="naodizer" value="naodizer" required>
+                <label for="naodizer">Prefiro não dizer</label>
+            </div>
+            
+            <div class="campo">
+                <input type="submit" id="enviar" name="enviar" value="Cadastrar">
+            </div>
+
+           
+        </form>
+    </main>
+    <footer id="meurodape" class="cor-de-fundo">
+        <p id="textorodape">Texto qualquer (Todos os direitos Reservados)</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body{
+    font-family: 'Arial';
+    margin: 0;
+}
+.cor-de-fundo{
+    background-color: green;
+}
+#meumenu{
+    color: white;
+    display: flex;
+}
+#minhalogo{
+    float: left;
+    margin-left: 15px;
+}
+.itensmenu{
+    float: left;
+    margin: 17px;
+    list-style: none;
+}
+#meuconteudoprincipal{
+    margin: 20px 10px;
+}
+.minhasimagens{
+    width: 100%;
+}
+#meurodape{
+    text-align: center;
+    color: white;
+}
+#textorodape{
+    padding: 30px;
+}
+
+
+
+.campo{
+    margin-bottom: 20px;
+}
+.dados{
+    font-size: 18px;
+    padding: 10px;
+}
