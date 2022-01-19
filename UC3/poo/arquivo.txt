@@ -1,0 +1,25 @@
+O que é um objeto?
+
+Coisa material ou abstrata que pode ser percebida pelos sentidos e descrita por meio das suas características, comportamentos e estado atual;
+
+Classe Caneta
+características  - O que a caneta tem? (atributos)
+cor
+ponta
+marca
+carga
+tampa
+
+
+comportamentos - O que a caneta faz? (métodos)
+
+riscar
+escrever
+desenhar
+
+Estado atual - Como a caneta é? (objeto)
+cor azul
+ponta 0.7
+marca bic
+carga 70
+tampa - falso
