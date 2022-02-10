@@ -93,6 +93,19 @@ class Autor{
             return false;
         }
     }
+    public function buscarDadosDoAutor($email){
+         
+        $consulta = $this->conexao->prepare("SELECT * FROM autor WHERE email=:EMAIL");
+        $consulta->bindParam(":EMAIL", $email);
+        $consulta->execute();
+        $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        $this->setIdentificador($resultado[0]['identificador']);
+        $this->setNome($resultado[0]['nome']);
+        $this->setEmail($resultado[0]['email']);
+        $this->setDescricao($resultado[0]['descricao']);
+        $this->setAtivo($resultado[0]['ativo']);
+    
+    }
     
     public function editarDados($nome, $descricao, $email){
       

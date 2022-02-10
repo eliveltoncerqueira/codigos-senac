@@ -2,6 +2,7 @@
 
 date_default_timezone_set('America/Bahia');
 
+
 require_once 'Conexao.php';
 class Noticia{
     private $conexao;
@@ -47,6 +48,16 @@ class Noticia{
     public function buscarTodasNoticias(){
         try{
             $consulta = $this->conexao->prepare("SELECT * FROM noticia WHERE status=1");
+            $consulta->execute();
+            $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            return $noticias;
+        }catch(PDOException $e){
+            return false;
+        }
+    }
+    public function buscarNoticiasHome(){
+        try{
+            $consulta = $this->conexao->prepare("SELECT noticia.imagem, noticia.titulo, noticia.subtitulo, autor.nome, noticia.dataPublicacao, noticia.identificador FROM noticia INNER JOIN autor ON autor.identificador = noticia.id_autor ORDER BY noticia.identificador DESC LIMIT 4;");
             $consulta->execute();
             $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
             return $noticias;
