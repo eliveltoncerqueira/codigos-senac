@@ -3,7 +3,7 @@
 
     $noticia = new Noticia();
 
-    $Noticias = $noticia->buscarNoticiasHome();
+    $Noticias = $noticia->buscarTodasNoticias();
 
   
 
@@ -12,7 +12,7 @@
        ?>
             
             <div class="post-preview">
-                <a href="post.php?id=<?php echo $n['identificador'] ?>">
+                <a href="post.php?id=<?php echo $n['identificador']  ?>">
                     <img class="img-fluid" style="width: 100%;" src="imagens/<?php echo $n['imagem'] ?>" alt="Notícia 04" >
                     <h3 class="post-title"><?php echo $n['titulo'] ?></h3>
                     <h4 class="post-subtitle"><?php echo $n['subtitulo'] ?></h4>
@@ -29,4 +29,3 @@
 
     ?>
 
-<div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="todas-noticias.php">Postagens antigas →</a></div>

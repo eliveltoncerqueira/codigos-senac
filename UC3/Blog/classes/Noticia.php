@@ -47,20 +47,30 @@ class Noticia{
     }
     public function buscarTodasNoticias(){
         try{
-            $consulta = $this->conexao->prepare("SELECT * FROM noticia WHERE status=1");
+            $consulta = $this->conexao->prepare("SELECT noticia.imagem, noticia.titulo, noticia.subtitulo, autor.nome, noticia.dataPublicacao, noticia.identificador FROM noticia INNER JOIN autor ON autor.identificador = noticia.id_autor ORDER BY noticia.identificador DESC;");
             $consulta->execute();
-            $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $noticias;
+            if($consulta->rowCount()){
+                $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                return $noticias;
+            }else{
+                return false;
+            }
+            
         }catch(PDOException $e){
             return false;
         }
     }
     public function buscarNoticiasHome(){
         try{
-            $consulta = $this->conexao->prepare("SELECT noticia.imagem, noticia.titulo, noticia.subtitulo, autor.nome, noticia.dataPublicacao, noticia.identificador FROM noticia INNER JOIN autor ON autor.identificador = noticia.id_autor ORDER BY noticia.identificador DESC LIMIT 4;");
+            $consulta = $this->conexao->prepare("SELECT noticia.imagem, noticia.titulo, noticia.subtitulo, autor.nome, noticia.dataPublicacao, noticia.identificador FROM noticia INNER JOIN autor ON autor.identificador = noticia.id_autor ORDER BY noticia.identificador DESC LIMIT 3;");
             $consulta->execute();
-            $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $noticias;
+            if($consulta->rowCount()){
+                $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                return $noticias;
+            }else{
+                return false;
+            }
+            
         }catch(PDOException $e){
             return false;
         }
@@ -78,11 +88,16 @@ class Noticia{
     }
     public function buscarNoticiaPorIdentificador($identificador){
         try{
-            $consulta = $this->conexao->prepare("SELECT * FROM noticia WHERE identificador=:IDENTIFICADOR");
+            $consulta = $this->conexao->prepare("SELECT noticia.titulo, noticia.subtitulo, autor.nome, noticia.dataPublicacao, noticia.imagem, noticia.conteudo, noticia.fonte FROM noticia INNER JOIN autor ON noticia.id_autor = autor.identificador WHERE noticia.identificador=:IDENTIFICADOR");
             $consulta->bindParam(":IDENTIFICADOR", $identificador);
             $consulta->execute();
-            $noticias = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $noticias;
+            if($consulta->rowCount()){
+                $noticia = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                return $noticia[0];
+            }else{
+                return false;
+            }
+           
         }catch(PDOException $e){
             return false;
         }

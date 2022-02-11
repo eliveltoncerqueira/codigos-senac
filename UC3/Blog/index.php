@@ -49,9 +49,6 @@
                 <div id="noticias" class="col-md-10 col-lg-8 col-xl-7">
                     
 
-
-
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="todas-noticias.php">Postagens antigas →</a></div>
                 </div>
             </div>
         </div>
