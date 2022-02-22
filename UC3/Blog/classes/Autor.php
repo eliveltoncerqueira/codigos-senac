@@ -1,5 +1,6 @@
 <?php
 require_once 'Conexao.php';
+require_once 'Noticia.php';
 
 class Autor{
     private $identificador;
@@ -93,6 +94,16 @@ class Autor{
             return false;
         }
     }
+    public function verificarEmail($email){
+        $consulta = $this->conexao->prepare("SELECT * FROM autor WHERE email=:EMAIL");
+        $consulta->bindParam(":EMAIL", $email);
+        $consulta->execute();
+        if($consulta->rowCount()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public function buscarDadosDoAutor($email){
          
         $consulta = $this->conexao->prepare("SELECT * FROM autor WHERE email=:EMAIL");
@@ -150,6 +161,7 @@ class Autor{
 
 
     public function ativar(){
+      
         try{
             if($this->getAtivo()==0){
                 $consulta = $this->conexao->prepare("UPDATE autor SET ativo=1 WHERE identificador=".$this->getIdentificador());

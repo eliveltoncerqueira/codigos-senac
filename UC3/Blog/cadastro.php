@@ -39,7 +39,7 @@
                        
                         <div class="my-5">
                             
-                            <form id="contactForm" action="#" method="post">
+                            <form id="contactForm" action="confirmacao-cadastro-autor.php" method="get">
                                 <div class="form-floating">
                                     <input class="form-control" id="nome" name="nome" type="text" placeholder="Entre com seu Nome" />
                                     <label for="email">Nome</label>
